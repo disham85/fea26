@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CW_11</title>
+</head>
+
+<body>
+    <header></header>
+
+    <main style="text-align: center;font-family: sans-serif;">
+        <h1>ClassWork_11</h1>
+        <h2>Dmitrij Baranov</h1>
+    </main>
+
+    <footer></footer>
+
+    <script>
+        //#3
+
+        const secondsInMinute = 60,
+            secondsInHour = 3600;
+
+        var seconds,
+            h,
+            m,
+            s;
+
+        seconds = +prompt('Введите количество секунд');
+
+        h = (seconds - (seconds % secondsInHour)) / secondsInHour;
+        m = ((seconds % secondsInHour) - ((seconds % secondsInHour) % secondsInMinute)) / secondsInMinute;
+        s = ((seconds % secondsInHour) % secondsInMinute);
+
+        console.log(h + ' часов ' + m + ' минут ' + s + ' секунд ');
+
+        //#4
+
+        var monthArr = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
+        var currentMonth = monthArr[new Date().getMonth()];
+        console.log('Текущий месяц - ' + currentMonth);
+    </script>
+</body>
+
+</html>

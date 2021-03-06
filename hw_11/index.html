@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW_11</title>
+</head>
+
+<body>
+    <header></header>
+    <main style="text-align: center;font-family: sans-serif;">
+        <h1>Homework_11</h1>
+        <h2>Dmitrij Baranov</h1>
+    </main>
+    <footer></footer>
+    <script>
+        //#1
+
+        var sloganArr = ['Привет, ', 'мир', '!'];
+        var slogan = sloganArr[0] + sloganArr[1] + sloganArr[2];
+        console.log(slogan);
+
+
+        //#2
+
+        var lang = prompt('Выберите язык. Введите ru или en');
+        if (lang == 'ru') {
+            var arr = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+            console.log(arr);
+        };
+        if (lang == 'en') {
+            var arr = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+            console.log(arr);
+        };
+
+        var lang = prompt('Выберите язык. Введите ru или en');
+        switch (lang) {
+            case 'ru':
+                var arr = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+                console.log(arr);
+                break;
+            case 'en':
+                var arr = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+                console.log(arr);
+                break;
+            default:
+                console.log('Язык не выбран');
+        };
+
+        var lang = prompt('Выберите язык. Введите ru или en');
+        var arr = [
+            ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
+            ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+        ];
+
+
+        //#3*
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>HW_13</title>
+	</head>
+	<body style="font-family: sans-serif">
+		<header></header>
+		<main>
+			<h1>Dmitrij Baranov</h1>
+			<h2>Homework 13</h2>
+		</main>
+		<footer></footer>
+		<script>
+			// #1 padStart
+
+			function pStart() {
+				var myString = prompt('enter something');
+				while (!myString) {
+					myString = prompt('enter something');
+				}
+				var targetLength = +prompt('wanted length of string');
+				while (!targetLength) {
+					targetLength = +prompt('wanted length of string');
+				}
+
+				if (myString.length >= targetLength) {
+					return console.log(myString + 'spaces not added');
+				} else {
+					return console.log(
+						new Array(targetLength - myString.length).join('_') + myString
+					);
+				}
+			}
+
+			pStart();
+		</script>
+	</body>
+</html>

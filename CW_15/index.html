@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CW_15</title>
+	</head>
+	<body style="font-family: sans-serif">
+		<header></header>
+		<main>
+			<h1>Dmitrij Baranov</h1>
+			<h2>Classwork 15</h2>
+		</main>
+		<footer></footer>
+		<script>
+			// #1
+
+			smile('laugh', 2);
+			function smile(arg1, arg2) {
+				return console.log(arg1.repeat(arg2));
+			}
+
+			var smile2 = function (arg1, arg2) {
+				return console.log(arg1.repeat(arg2));
+			};
+			smile2('laugh', 2);
+
+			var smile3 = new Function(
+				'arg1',
+				'arg2',
+				'return console.log(arg1.repeat(arg2))'
+			);
+			smile3('laugh', 2);
+
+			var smile4 = (arg1, arg2) => {
+				return console.log(arg1.repeat(arg2));
+			};
+			smile4('laugh', 2);
+
+			// #2
+
+			getMin(2, 3, 4, 5, 6, 7, 8, 9);
+			function getMin(...arr) {
+				let min = Math.min(...arr);
+				return console.log(min);
+			}
+
+			var getMin2 = function (...arr) {
+				let min = Math.min(...arr);
+				return console.log(min);
+			};
+			getMin2(2, 3, 4, 5, 6, 7, 8, 9);
+
+			var getMin3 = new Function(
+				'...arr',
+				'return console.log(Math.min(...arr))'
+			);
+			getMin3(2, 3, 4, 5, 6, 7, 8, 9);
+
+			var getMin4 = (...arr) => {
+				let min = Math.min(...arr);
+				return console.log(min);
+			};
+			getMin4(2, 3, 4, 5, 6, 7, 8, 9);
+
+			// #3
+
+			buildPyramid(7);
+			function buildPyramid(strs) {
+				var str = '';
+				for (var i = 0; i < strs; i++) {
+					if (str === '') {
+						str = str + '#';
+						console.log(
+							str.padStart(strs, '-').padEnd(strs + (strs - 1), '-') +
+								'\n'
+						);
+					} else {
+						str = str + '##';
+						console.log(
+							str
+								.padStart(
+									strs + (str.length - (str.length % 2)) / 2,
+									'-'
+								)
+								.padEnd(strs + (strs - 1), '-') + '\n'
+						);
+					}
+				}
+			}
+
+			var buildPyramid2 = function (strs) {
+				var str = '';
+				for (var i = 0; i < strs; i++) {
+					if (str === '') {
+						str = str + '#';
+						console.log(
+							str.padStart(strs, '-').padEnd(strs + (strs - 1), '-') +
+								'\n'
+						);
+					} else {
+						str = str + '##';
+						console.log(
+							str
+								.padStart(
+									strs + (str.length - (str.length % 2)) / 2,
+									'-'
+								)
+								.padEnd(strs + (strs - 1), '-') + '\n'
+						);
+					}
+				}
+			};
+			buildPyramid2(7);
+
+			var buildPyramid3 = new Function(
+				'strs',
+				`var str = '';
+				for (var i = 0; i < strs; i++) {
+					if (str === '') {
+						str = str + '#';
+						console.log(
+							str.padStart(strs, '-').padEnd(strs + (strs - 1), '-')
+						);
+					} else {
+						str = str + '##';
+						console.log(
+							str
+								.padStart(
+									strs + (str.length - (str.length % 2)) / 2,
+									'-'
+								)
+								.padEnd(strs + (strs - 1), '-')
+						);
+					}
+				}`
+			);
+			buildPyramid3(7);
+
+			var buildPyramid4 = (strs) => {
+				var str = '';
+				for (var i = 0; i < strs; i++) {
+					if (str === '') {
+						str = str + '#';
+						console.log(
+							str.padStart(strs, '-').padEnd(strs + (strs - 1), '-') +
+								'\n'
+						);
+					} else {
+						str = str + '##';
+						console.log(
+							str
+								.padStart(
+									strs + (str.length - (str.length % 2)) / 2,
+									'-'
+								)
+								.padEnd(strs + (strs - 1), '-') + '\n'
+						);
+					}
+				}
+			};
+			buildPyramid4(7);
+
+			// #4
+
+			unsplitArr([
+				[1, 2, 3, 4],
+				[5, 6, 7, 8],
+				[9, 10, 11, 12],
+			]);
+			function unsplitArr(arr) {
+				let result = arr.flat();
+				return console.log(result);
+			}
+
+			var unsplitArr2 = function (arr) {
+				let result = arr.flat();
+				return console.log(result);
+			};
+			unsplitArr2([
+				[1, 2, 3, 4],
+				[5, 6, 7, 8],
+				[9, 10, 11, 12],
+			]);
+
+			var unsplitArr3 = new Function(
+				'arr',
+				'return console.log(arr.flat())'
+			);
+			unsplitArr3([
+				[1, 2, 3, 4],
+				[5, 6, 7, 8],
+				[9, 10, 11, 12],
+			]);
+
+			var unsplitArr4 = (arr) => {
+				let result = arr.flat();
+				return console.log(result);
+			};
+			unsplitArr4([
+				[1, 2, 3, 4],
+				[5, 6, 7, 8],
+				[9, 10, 11, 12],
+			]);
+		</script>
+	</body>
+</html>

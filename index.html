@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>HW_16</title>
+	</head>
+	<body style="font-family: sans-serif">
+		<header></header>
+		<main>
+			<h1>Dmitrij Baranov</h1>
+			<h2>Homework 16</h2>
+		</main>
+		<footer></footer>
+		<script>
+			// #1
+
+			function makeCounter() {
+				let total = null;
+				return function (amount) {
+					let result;
+					if (!total) {
+						console.log((total = amount));
+						do {
+							result = +prompt('Enter your number');
+							console.log((total += result));
+						} while (result);
+						if (!result) {
+							return console.log('Counter out');
+						}
+					}
+				};
+			}
+
+			var counter = makeCounter();
+			console.log(counter(+prompt('Enter your number')));
+
+			/////////////////////////////////////
+			function makeCounter() {
+				let total = null;
+				return function (amount) {
+					if (!total) {
+						total = amount;
+						return total;
+					} else {
+						return (total += amount);
+					}
+				};
+			}
+
+			var counter = makeCounter();
+
+			console.log(counter(3));
+			console.log(counter(10));
+			////////////////////////////////////
+
+			// #2
+
+			function getUpdateArr() {
+				let arr = [];
+				return function (element) {
+					if (!element) {
+						arr = [];
+					} else {
+						arr.push(element);
+					}
+					return arr;
+				};
+			}
+
+			const updateArr = getUpdateArr();
+			console.log(updateArr(15));
+			console.log(updateArr('Dima'));
+			console.log(updateArr({ name: 'Dima' }));
+			console.log(updateArr());
+		</script>
+	</body>
+</html>

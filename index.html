@@ -126,12 +126,7 @@
 					let i = 0;
 
 					for (let index in Student.listOfStudents) {
-						if (i > 4) {
-							Student.listOfStudents[index].isSelfPayment = true;
-						} else {
-							Student.listOfStudents[index].isSelfPayment = false;
-						}
-						i++;
+						Student.listOfStudents[index].isSelfPayment = index > 4;
 						Student.listOfStudents[index].id = +index + 1;
 					}
 				}

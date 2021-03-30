@@ -123,8 +123,6 @@
 					this.setId();
 				}
 				setId() {
-					let i = 0;
-
 					for (let index in Student.listOfStudents) {
 						Student.listOfStudents[index].isSelfPayment = index > 4;
 						Student.listOfStudents[index].id = +index + 1;

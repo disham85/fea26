@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>HW_17</title>
+	</head>
+	<body style="text-align: center; font-family: sans-serif">
+		<header></header>
+		<main>
+			<h1>Dmitrij Baranov</h1>
+			<h2>Homework 17</h2>
+		</main>
+		<footer></footer>
+		<script>
+			// #1
+
+			const studentArr = [
+				{
+					name: 'Сергей',
+					surname: 'Войлов',
+					ratingPoint: 1000,
+					schoolPoint: 1000,
+					course: 2,
+				},
+				{
+					name: 'Татьяна',
+					surname: 'Коваленко',
+					ratingPoint: 880,
+					schoolPoint: 700,
+					course: 1,
+				},
+				{
+					name: 'Анна',
+					surname: 'Кугир',
+					ratingPoint: 1430,
+					schoolPoint: 1200,
+					course: 3,
+				},
+				{
+					name: 'Станислав',
+					surname: 'Щелоков',
+					ratingPoint: 1130,
+					schoolPoint: 1060,
+					course: 2,
+				},
+				{
+					name: 'Денис',
+					surname: 'Хрущ',
+					ratingPoint: 1000,
+					schoolPoint: 990,
+					course: 4,
+				},
+				{
+					name: 'Татьяна',
+					surname: 'Капустник',
+					ratingPoint: 650,
+					schoolPoint: 500,
+					course: 3,
+				},
+				{
+					name: 'Максим',
+					surname: 'Меженский',
+					ratingPoint: 990,
+					schoolPoint: 1100,
+					course: 1,
+				},
+				{
+					name: 'Денис',
+					surname: 'Марченко',
+					ratingPoint: 570,
+					schoolPoint: 1300,
+					course: 4,
+				},
+				{
+					name: 'Антон',
+					surname: 'Завадский',
+					ratingPoint: 1090,
+					schoolPoint: 1010,
+					course: 3,
+				},
+				{
+					name: 'Игорь',
+					surname: 'Куштым',
+					ratingPoint: 870,
+					schoolPoint: 790,
+					course: 1,
+				},
+				{
+					name: 'Инна',
+					surname: 'Скакунова',
+					ratingPoint: 1560,
+					schoolPoint: 200,
+					course: 2,
+				},
+				{
+					name: 'Олег',
+					surname: 'Васильев',
+					ratingPoint: 1715,
+					schoolPoint: 800,
+					course: 3,
+				},
+			];
+
+			class Student {
+				static listOfStudents = [];
+				constructor(enrollee) {
+					Student.listOfStudents.push(enrollee);
+					Student.listOfStudents = Student.listOfStudents.sort(function (
+						a,
+						b
+					) {
+						return (
+							b.ratingPoint - a.ratingPoint ||
+							b.schoolPoint - a.schoolPoint
+						);
+					});
+					this.name = enrollee.name;
+					this.surname = enrollee.surname;
+					this.ratingPoint = enrollee.ratingPoint;
+					this.schoolPoint = enrollee.schoolPoint;
+					this.setId();
+				}
+				setId() {
+					for (let index in Student.listOfStudents) {
+						Student.listOfStudents[index].isSelfPayment = index > 4;
+						Student.listOfStudents[index].id = +index + 1;
+					}
+				}
+			}
+
+			for (let studentPayload of studentArr) {
+				new Student(studentPayload);
+			}
+
+			console.log(Student.listOfStudents);
+		</script>
+	</body>
+</html>

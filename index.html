@@ -15,6 +15,40 @@
 		<footer></footer>
 		<script>
 			// #1
+
+			class CustomString {
+				constructor(myString) {
+					this.myString = myString;
+				}
+				reverse() {
+					return this.myString.split('').reverse().join('');
+				}
+
+				ucFirst() {
+					return this._ucFirst(this.myString);
+				}
+
+				ucWords() {
+					return this.myString
+						.split(' ')
+						.map((item) => this._ucFirst(item))
+						.join(' ');
+				}
+
+				_ucFirst(myString) {
+					if (!myString) {
+						return myString;
+					}
+					return (
+						myString[0].toUpperCase() + myString.slice(1).toLowerCase()
+					);
+				}
+			}
+
+			let string = new CustomString('qwerty qwert qwer qwe');
+			console.log(string.reverse());
+			console.log(string.ucFirst());
+			console.log(string.ucWords());
 		</script>
 	</body>
 </html>

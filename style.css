@@ -1,0 +1,50 @@
+body{
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+h1,
+h2,
+h3{
+    text-align: center;
+}
+
+h3{
+    margin: 0 0 50px;
+}
+
+.weatherBlock{
+    text-align: center;
+    max-width: 200px;
+    border: 2px solid #555;
+    border-radius: 5px;
+    margin: 0 auto;
+    padding: 40px 25px;
+}
+
+#citySelect, #citySelect option{
+    width: 100%;
+    font-size: 20px;
+    margin: 0 0 15px;
+    border: 0;
+}
+
+#citySelect:focus{
+    border-right: 0;
+    outline: 0;
+}
+
+.cityName{
+    font-size: 24px;
+    margin: 0 0 15px;
+}
+
+.temperature{
+    font-size: 60px;
+    margin: 0 0 30px;
+}
+
+.weather{
+    font-size: 18px;
+    color: #666;
+}
